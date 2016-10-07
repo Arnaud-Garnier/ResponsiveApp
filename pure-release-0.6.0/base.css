@@ -16,6 +16,26 @@ Copyright (c) Nicolas Gallagher and Jonathan Neal
  *    user zoom.
  */
 
+.recette >img {
+  z-index: 1;
+  transition: all 1s;
+  -moz-transition: 1s;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+}
+
+.recette:hover > img {
+  transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+}
+
+.recette:hover:after {
+  position: absolute;
+}
+
 @font-face {
     font-family: "Gravity";
     src: url('../Font/gravity/Gravity-Book.otf');
