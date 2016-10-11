@@ -1,0 +1,13 @@
+.pure-title {
+	text-align: center;
+	font-style: italic;
+}
+
+.pure-numb {
+	font-size: 1.5em;
+}
+
+.recipe-img  {
+    width: 100%;
+    height: auto;
+}
