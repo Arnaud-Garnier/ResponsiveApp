@@ -11,3 +11,38 @@
     width: 100%;
     height: auto;
 }
+
+#recette-crepes {
+	background-image: url("../Images/crepes-bg.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	text-align: center;
+}
+
+#recette-content {
+	text-align: center;
+}
+
+.numbField {
+	max-width: 3em;
+}
+
+.recetteList {
+	list-style-type: none;
+}
+
+#lancer-button {
+	display: block;
+	margin : auto;
+}
+
+#recette-form {
+	border: 0.15em black solid;
+	border-style: outset;
+	border-radius: 1em;
+	width: 80%;
+	display: block;
+	margin: auto;
+	text-align: center;
+    box-shadow: 8px 8px 12px #aaa;
+}

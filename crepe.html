@@ -45,7 +45,7 @@
                 <div class="pure-menu pure-menu-horizontal custom-can-transform">
                     <ul class="pure-menu-list">
                         <li class="pure-menu-item"><a href="index.html" class="pure-menu-link">Accueil</a></li>
-                        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Ajouter des recettes</a></li>
+                        <li class="pure-menu-item"><a href="form.html" class="pure-menu-link">Ajouter des recettes</a></li>
                         <li class="pure-menu-item"><a href="#" class="pure-menu-link">Nous contacter</a></li>
                     </ul>
                 </div>
@@ -57,19 +57,17 @@
         <input type="search" placeholder="Rechercher une recette..."/>
     </div>
 
-    
     <div class="pure-u-1">
-        <div class="pure-title"><h1>Crèpes</h1></div>
+        <div class="pure-title"><h1>Crêpes</h1></div>
     </div>
     <div class="pure-u-3-1">
         <!-- PUB -->
     </div>
     <div class="pure-u-3-1">
-        <div class="pure-u-1"><center><img class = "recipe-img"src="Images/crepes.jpg" /></div>
-        <div class="pure-u-1"><h6 class="pure-title">Temps de préparation : 10 minutes - Temps de cuisson : 20 minutes - 15 parts</h6></div>
-        <div class="pure-u-1">
+        <div class="pure-u-1"><h5 class="pure-title">Temps de préparation : 10 minutes - Temps de cuisson : 20 minutes - 15 crêpes</h5></div>
+        <div class="pure-u-1" id ="recette-crepes">
             <h3>Ingrédients : </h3>
-            <ul>
+            <ul class="recetteList">
                 <li><b class="pure-numb">300</b> g de farine</li>
                 <li><b class="pure-numb">3</b> œufs entiers</li>
                 <li><b class="pure-numb">3</b> cuillères à soupe de sucre</li>
@@ -77,8 +75,13 @@
                 <li><b class="pure-numb">50</b> g de beurre</li>
                 <li><b class="pure-numb">75</b> cl de lait</li>
                 <li><b class="pure-numb">1</b> petit verre à liqueur de rhum</li>
-            </ul></div>
-        <div class="pure-u-1 pure-button">Lancer la recette</div>
+            </ul>
+            <br />
+        </div>
+        <div class="pure-u-1"></div>
+        <div class="pure-u-1">
+            <input type="submit" class="pure-button" id="lancer-button" value="Lancer la recette"/>
+        </div>
     </div>
     <div class="pure-u-3-1">
         <!-- PUB -->
