@@ -67,7 +67,7 @@
         <div class="pure-u-1"><h5 class="pure-title">Temps de préparation : 10 minutes - Temps de cuisson : 20 minutes - 15 crêpes</h5></div>
         <div class="pure-u-1" id ="recette-crepes">
             <h3>Ingrédients : </h3>
-            <ul class="recetteList">
+            <ul class="recette-list">
                 <li><b class="pure-numb">300</b> g de farine</li>
                 <li><b class="pure-numb">3</b> œufs entiers</li>
                 <li><b class="pure-numb">3</b> cuillères à soupe de sucre</li>
@@ -78,9 +78,21 @@
             </ul>
             <br />
         </div>
+        <div class="pure-u-1" id="etape1">
+            <h2>Mettre la farine dans une terrine et former un puits.<br /><br/>Mettre les œufs entiers, le sucre, l'huile et le beurre.</h2>
+            <input type="submit" onclick="nextStep(1)" class="pure-button" id="step1" value=">>"/>
+        </div>
+        <div class="pure-u-1" id="etape2">
+            <h2>Mélanger délicatement avec un fouet en ajoutant au fur et à mesure le lait.<br /><br/>La pâte ainsi obtenue doit avoir une consistance d'un liquide légèrement épais.</h2>
+            <input type="submit" onclick="nextStep(2)" class="pure-button" id="step2" value=">>"/>
+        </div>
+        <div class="pure-u-1" id="etape3">
+            <h2>Faire chauffer une poêle anti-adhésive et y déposer quelques gouttes d'huile.<br /><br/>Faire cuire les crêpes à feu doux.</h2>
+            <input type="submit" onclick="resetRecette()" class="pure-button" value="Terminer"/>
+        </div>
         <div class="pure-u-1"></div>
         <div class="pure-u-1">
-            <input type="submit" class="pure-button" id="lancer-button" value="Lancer la recette"/>
+            <input type="submit" onclick="hideRecette()" class="pure-button" id="lancer-button" value="Lancer la recette"/>
         </div>
     </div>
     <div class="pure-u-3-1">
@@ -130,4 +142,36 @@ document.getElementById('toggle').addEventListener('click', function (e) {
 window.addEventListener(WINDOW_CHANGE_EVENT, closeMenu);
 })(this, this.document);
 
+</script>
+
+<script>
+function hideRecette() {
+    var x = document.getElementById('recette-crepes');
+    x.style.display = 'none';
+    x = document.getElementById('lancer-button');
+    x.style.display = 'none';
+    x = document.getElementById('etape1');
+    x.style.display = 'block';
+}
+</script>
+
+<script>
+function nextStep(i) {
+    var x = document.getElementById('etape'+i);
+    x.style.display = 'none';
+    var i2 = i + 1;
+    x = document.getElementById('etape'+i2);
+    x.style.display = 'block';
+}
+</script>
+
+<script>
+function resetRecette() {
+    x = document.getElementById('etape3');
+    x.style.display = 'none';
+    var x = document.getElementById('recette-crepes');
+    x.style.display = 'block';
+    var x = document.getElementById('lancer-button');
+    x.style.display = 'block';
+}
 </script>
