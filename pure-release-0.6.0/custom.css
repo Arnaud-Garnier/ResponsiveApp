@@ -86,14 +86,12 @@ meter {
 	text-align: left;
 }
 
-table
-{
+table {
 	margin: auto;
 	max-width: 80%;
 }
 
-td
-{
+td {
 text-align :center;
 }
 
@@ -109,4 +107,20 @@ text-align :center;
 
 .ingField {
 	max-width: 7em;
+}
+
+.show-on-little-screen {
+	display: none;
+}
+
+@media only screen and (max-width:380px) {
+	.hide-on-little-screen {
+		display: none;
+	}
+}
+
+@media only screen and (max-width:380px) {
+	.show-on-little-screen {
+		display: block;
+	}
 }
