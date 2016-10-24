@@ -9,7 +9,7 @@ https://github.com/yahoo/pure/blob/master/LICENSE.md
     border-collapse: collapse;
     border-spacing: 0;
     empty-cells: show;
-    border: 1px solid #cbcbcb;
+    border: 1px solid #BEA586;
 }
 
 .pure-table caption {
@@ -21,7 +21,7 @@ https://github.com/yahoo/pure/blob/master/LICENSE.md
 
 .pure-table td,
 .pure-table th {
-    border-left: 1px solid #cbcbcb;/*  inner column border */
+    border-left: 1px solid #BEA586;/*  inner column border */
     border-width: 0 0 0 1px;
     font-size: inherit;
     margin: 0;
@@ -37,7 +37,7 @@ there's a rowspan on the first cell. Case added to the tests. issue#432 */
 }
 
 .pure-table thead {
-    background-color: #e0e0e0;
+    background-color: #BEA586;
     color: #000;
     text-align: left;
     vertical-align: bottom;

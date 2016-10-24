@@ -36,11 +36,12 @@
 	margin : auto;
 }
 
-#recette-form {
+.recette-form {
 	border: 0.15em black solid;
 	border-style: outset;
 	border-radius: 1em;
 	width: 80%;
+	height: auto;
 	display: block;
 	margin: auto;
 	text-align: center;
@@ -60,4 +61,52 @@
 #etape3 {
 	text-align: center;
 	display: none;
+}
+
+.ajouter-button:before {
+	content: "\271A";
+}
+
+.ajouter-button {
+	border-radius: 2em;
+	background-color: #73D77E;
+}
+
+#valid-button {
+	background-color: #1E8133;
+}
+
+meter {
+	width: 50%;
+	height: auto;
+	margin: auto;
+}
+
+.search {
+	text-align: left;
+}
+
+table
+{
+	margin: auto;
+	max-width: 80%;
+}
+
+td
+{
+text-align :center;
+}
+
+.video-recette {
+	width: 100%;
+	height: auto;
+}
+
+.pub {
+	border: 0.1em black solid;
+	text-align: center;
+}
+
+.ingField {
+	max-width: 7em;
 }

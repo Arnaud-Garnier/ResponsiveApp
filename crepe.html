@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>PolyCook</title>
+    <title>Polycook</title>
 
     <!-- CSS style sheets -->
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
@@ -17,13 +17,18 @@
         <link rel="stylesheet" href="http://yui.yahooapis.com/combo?pure/0.1.0/base-min.css&pure/0.1.0/grids-min.css&pure/0.1.0/forms-min.css">  
     <!--<![endif]-->
 
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
     <link rel="stylesheet" href="pure-release-0.6.0/base.css">
     <link rel="stylesheet" href="pure-release-0.6.0/grids.css">
     <link rel="stylesheet" href="pure-release-0.6.0/menus.css">
     <link rel="stylesheet" href="pure-release-0.6.0/menus-skin.css">
     <link rel="stylesheet" href="pure-release-0.6.0/custom.css">
     <link rel="stylesheet" href="pure-release-0.6.0/buttons.css">
+    <link rel="stylesheet" href="pure-release-0.6.0/tables.css">
     <link rel="stylesheet" href="pure-release-0.6.0/responsive-horizontal-to-vertical-menu.css">
+
+    <link rel="icon" href="favicon.png" type="image/png">
 
 </head>
 
@@ -53,52 +58,109 @@
         </div>
     </div>
 
-    <div class="pure-u-1">
-        <input type="search" placeholder="Rechercher une recette..."/>
+    <div class="pure-u-1 search">
+        <input list="recipes" type="text" id="recherche-recette">
+        <datalist id="recipes">
+            <select>
+                <option value="Brownie aux figues" label="brownie figues"></option>
+                <option value="Café moka" label="café moka"></option>
+                <option value="Pâte à crêpes" label="crêpes"></option>
+                <option value="Tortilla" label="tortilla"></option>
+                <option value="Mousse au chocolat" label="mousse chocolat"></option>
+            </select>
+        </datalist>
+        <input onclick="searchRecipe()" type="submit" value="Rechercher">
     </div>
 
-    <div class="pure-u-1">
-        <div class="pure-title"><h1>Crêpes</h1></div>
-    </div>
+    <div class="pure-u-1"></div>
     <div class="pure-u-3-1">
-        <!-- PUB -->
+        <div class="pub">Pub</div>
     </div>
-    <div class="pure-u-3-1">
-        <div class="pure-u-1"><h5 class="pure-title">Temps de préparation : 10 minutes - Temps de cuisson : 20 minutes - 15 crêpes</h5></div>
-        <div class="pure-u-1" id ="recette-crepes">
-            <h3>Ingrédients : </h3>
-            <ul class="recette-list">
-                <li><b class="pure-numb">300</b> g de farine</li>
-                <li><b class="pure-numb">3</b> œufs entiers</li>
-                <li><b class="pure-numb">3</b> cuillères à soupe de sucre</li>
-                <li><b class="pure-numb">2</b> cuillères à soupe d'huile</li>
-                <li><b class="pure-numb">50</b> g de beurre</li>
-                <li><b class="pure-numb">75</b> cl de lait</li>
-                <li><b class="pure-numb">1</b> petit verre à liqueur de rhum</li>
-            </ul>
-            <br />
-        </div>
-        <div class="pure-u-1" id="etape1">
-            <h2>Mettre la farine dans une terrine et former un puits.<br /><br/>Mettre les œufs entiers, le sucre, l'huile et le beurre.</h2>
-            <input type="submit" onclick="nextStep(1)" class="pure-button" id="step1" value=">>"/>
-        </div>
-        <div class="pure-u-1" id="etape2">
-            <h2>Mélanger délicatement avec un fouet en ajoutant au fur et à mesure le lait.<br /><br/>La pâte ainsi obtenue doit avoir une consistance d'un liquide légèrement épais.</h2>
-            <input type="submit" onclick="nextStep(2)" class="pure-button" id="step2" value=">>"/>
-        </div>
-        <div class="pure-u-1" id="etape3">
-            <h2>Faire chauffer une poêle anti-adhésive et y déposer quelques gouttes d'huile.<br /><br/>Faire cuire les crêpes à feu doux.</h2>
-            <input type="submit" onclick="resetRecette()" class="pure-button" value="Terminer"/>
-        </div>
-        <div class="pure-u-1"></div>
+    <div class="pure-u-1"></div>
+
+    <div class="pure-u-1 recette-form">
         <div class="pure-u-1">
-            <input type="submit" onclick="hideRecette()" class="pure-button" id="lancer-button" value="Lancer la recette"/>
+            <div class="pure-title">
+                <h1>Crêpes</h1>
+                <div class="rating">
+                    <span>Note : </span><span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+                </div>
+                <div class="rating">
+                    <span>Difficulté : </span><span>★</span><span>★</span><span>☆</span><span>☆</span><span>☆</span>
+                </div>
+            </div>
+        </div>
+        <div class="pure-u-3-1">
+            <div class="pure-u-1"></div>
+            <table class="pure-u-1 pure-table">
+                <thead>
+                    <tr>
+                        <th>Préparation</th>
+                        <th>Cuisson</th>
+                        <th>Parts</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>10 min.</td>
+                        <td>20 min.</td>
+                        <td>15 crêpes</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="pure-u-1"></div>
+            <div class="pure-u-1" id ="recette-crepes">
+                <h3>Ingrédients : </h3>
+                <ul class="recette-list">
+                    <li><b class="pure-numb">300</b> g de farine</li>
+                    <li><b class="pure-numb">3</b> œufs entiers</li>
+                    <li><b class="pure-numb">3</b> cuillères à soupe de sucre</li>
+                    <li><b class="pure-numb">2</b> cuillères à soupe d'huile</li>
+                    <li><b class="pure-numb">50</b> g de beurre</li>
+                    <li><b class="pure-numb">75</b> cl de lait</li>
+                    <li><b class="pure-numb">1</b> petit verre à liqueur de rhum</li>
+                </ul>
+            </div>
+            <div class="pure-u-1" id="etape1">
+                <h2>Mettre la farine dans une terrine et former un puits.<br /><br/>Mettre les œufs entiers, le sucre, l'huile et le beurre.</h2>
+                <input type="submit" onclick="nextStep(1)" class="pure-button" id="step1" value=">>"/>
+                <div class="pure-u-1"></div>
+                <div class="pure-u-1">
+                    <meter min=0 max=9 value=3>33.3%</meter>
+                </div>
+            </div>
+            <div class="pure-u-1" id="etape2">
+                <h2>Mélanger délicatement avec un fouet en ajoutant au fur et à mesure le lait.<br /><br/>La pâte ainsi obtenue doit avoir une consistance d'un liquide légèrement épais.</h2>
+                <input type="submit" onclick="nextStep(2)" class="pure-button" id="step2" value=">>"/>
+                <div class="pure-u-1"></div>
+                <div class="pure-u-1">
+                    <meter min=0 max=9 value=6>66.7%</meter>
+                </div>
+            </div>
+            <div class="pure-u-1" id="etape3">
+                <h2>Faire chauffer une poêle anti-adhésive et y déposer quelques gouttes d'huile.<br /><br/>Faire cuire les crêpes à feu doux.</h2>
+                <input type="submit" onclick="resetRecette()" class="pure-button" value="Vous avez terminé la recette !"/>
+                <div class="pure-u-1"></div>
+                <div class="pure-u-1">
+                    <meter min=0 max=9 value=9>100%</meter>
+                </div>
+            </div>
+            <div class="pure-u-1"></div>
+            <div class="pure-u-1">
+                <input type="submit" onclick="hideRecette()" class="pure-button" id="lancer-button" value="Lancer la recette"/>
+            <div class="pure-u-1"></div>
+            </div>
+            <div class="pure-u-1">
+                <h3 class="pure-title">Vidéo explicative</h3>
+                <video class="video-recette" poster="Images/poster.png" controls src="Video/recette-crepes.mp4"></video>
+            </div>
         </div>
     </div>
+    <div class="pure-u-1"></div> 
     <div class="pure-u-3-1">
-        <!-- PUB -->
+        <div class="pub">Pub</div>
     </div>
-
 </body>
 </html>
 

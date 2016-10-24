@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>PolyCook</title>
+    <title>Polycook</title>
 
     <!-- CSS style sheets -->
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="pure-release-0.6.0/custom.css">
     <link rel="stylesheet" href="pure-release-0.6.0/button.css">
     <link rel="stylesheet" href="pure-release-0.6.0/responsive-horizontal-to-vertical-menu.css">
+
+    <link rel="icon" href="favicon.png" type="image/png">
 
 </head>
 
@@ -52,8 +54,14 @@
             </div>
         </div>
     </div>
+    
+    <div class="pure-u-1"></div>
+    <div class="pure-u-3-1">
+        <div class="pub">Pub</div>
+    </div>
+    <div class="pure-u-1"></div>
 
-    <div class="pure-u-1" id="recette-form">
+    <div class="pure-u-1 recette-form">
         <div class="pure-u-1"><div class="pure-title"><h1>Entrer une nouvelle recette</h1></div></div>
         <div class="pure-u-1">
             <input type="text" name="titre" placeholder="Titre de la recette" id="titre" autofocus />
@@ -61,27 +69,38 @@
         <div class="pure-u-1"></div>
         <div class="pure-u-1">
             <div class="pure-u-1-4">
-                Temps de prép. <input class="numbField" type="number" name="tmpsCuisson" id="tmpsCuisson" autofocus />
+                Temps de prép. <input class="numbField" type="time" name="tmpsCuisson" id="tmpsCuisson" autofocus />
             </div>
             <div class="pure-u-1-4">
-                Temps de cuisson <input class="numbField" type="number" name="tmpsPrep" id="tmpsPrep" autofocus />
+                Temps de cuisson <input class="numbField" type="time" name="tmpsPrep" id="tmpsPrep" autofocus />
             </div>
             <div class="pure-u-1-4">
-                Nombre de parts <input class="numbField" type="number" name="tmpsPrep" id="nbParts" autofocus />
+                Nombre de parts <input class="numbField" type="number" name="nbParts" id="nbParts" autofocus />
             </div>
             <div class="pure-u-1">
                 <h3>Ingrédients</h3>
-                <input type="text" name="init" placeholder="Ingrédient..."></span><br />
-                <span id="leschamps_1"><a class="pure-button" href="javascript:create_champ(1)">+</a></span>
+                <input type="text" class ="ingField" name="init" placeholder="Ingrédient..."><input type="number" class="numbField" name="init" placeholder="Qtité">
+                <select name="unit" id="unit">
+                    <option value="ml">ml</option>
+                    <option value="cl">cl</option>
+                    <option value="g">g</option>
+                    <option value="none">-</option>
+                </select><br />
+                <span id="leschamps_1"><a class="pure-button ajouter-button" href="javascript:create_champ(1)"></a></span>
                 <div class="pure-u-1"></div>
             </div>
             <div class="pure-u-1"></div>
             <div class="pure-u-1">Photo de la recette <input type="file" name="image" id="img" /></div>
         </div>
         <div class="pure-u-1"></div>
-        <a href="crepe.html"><input onclick="myFunction()" class="pure-button" type="submit" value="Envoyer" /></a>
+        <a href="crepe.html"><input onclick="myFunction()" id="valid-button" class="pure-button" type="submit" value="Envoyer"></a>
         <div class="pure-u-1"></div>
     </div>
+    <div class="pure-u-1"></div>
+    <div class="pure-u-3-1">
+        <div class="pub">Pub</div>
+    </div>
+    <div class="pure-u-1"></div>
 
 </body>
 </html>
@@ -131,8 +150,8 @@ window.addEventListener(WINDOW_CHANGE_EVENT, closeMenu);
 <script type="text/javascript">
 function create_champ(i) {
 var i2 = i + 1;
-document.getElementById('leschamps_'+i).innerHTML = '<input type="text" name="image['+i+']" placeholder="Ingrédient..."></span>';
-document.getElementById('leschamps_'+i).innerHTML += (i <= 10) ? '<br /><span id="leschamps_'+i2+'"><a class="pure-button" href="javascript:create_champ('+i2+')">+</a></span>' : '';
+document.getElementById('leschamps_'+i).innerHTML = '<input type="text" class ="ingField" name="image['+i+']" placeholder="Ingrédient..."><input type="number" class="numbField" name="init" placeholder="Qtité"><select name="unit" id="unit"><option value="ml">ml</option><option value="cl">cl</option><option value="g">g</option><option value="none">-</option></select>';
+document.getElementById('leschamps_'+i).innerHTML += (i <= 10) ? '<br /><span id="leschamps_'+i2+'"><a class="pure-button ajouter-button" href="javascript:create_champ('+i2+')"></a></span>' : '';
 
 }
 </script>
