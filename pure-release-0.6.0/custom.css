@@ -19,6 +19,24 @@
 	text-align: center;
 }
 
+.large-recette {
+	display: none;
+}
+
+@media only screen and (min-width:1920px) {
+	#recette-crepes {
+		display: none;
+	}
+}
+
+@media only screen and (min-width:1920px) {
+	.large-recette {
+		display: block;
+		text-align: center;
+
+	}
+}
+
 #recette-content {
 	text-align: center;
 }
@@ -96,7 +114,7 @@ text-align :center;
 }
 
 .video-recette {
-	width: 100%;
+	width: 80%;
 	height: auto;
 }
 
@@ -123,4 +141,14 @@ text-align :center;
 	.show-on-little-screen {
 		display: block;
 	}
+}
+
+.table-ingr {
+	background-image: url("../Images/crepes-bg.jpg");
+	background-position: center;
+	width: 100%;
+}
+
+.head-center {
+	text-align: center;
 }

@@ -94,7 +94,7 @@
             <div class="pure-u-1"></div>
             <table class="pure-table hide-on-little-screen">
                 <thead>
-                    <tr>
+                    <tr class="head-center">
                         <th>Préparation</th>
                         <th>Cuisson</th>
                         <th>Parts</th>
@@ -121,6 +121,54 @@
                     <li><b class="pure-numb">75</b> cl de lait</li>
                     <li><b class="pure-numb">1</b> petit verre à liqueur de rhum</li>
                 </ul>
+            </div>
+            <div class="pure-u-1 large-recette">
+                <table class="pure-table table-ingr">
+                    <thead>
+                        <tr class="head-center">
+                            <th>Ingrédient</th>
+                            <th>Quantité</th>
+                            <th>Unité</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Farine</td>
+                            <td>300</td>
+                            <td>g</td>
+                        </tr>
+                        <tr>
+                            <td>Œufs entiers</td>
+                            <td>3</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Sucre</td>
+                            <td>3</td>
+                            <td>Cuillère à soupes</td>
+                        </tr>
+                        <tr>
+                            <td>Huile</td>
+                            <td>2</td>
+                            <td>Cuillère à soupe</td>
+                        </tr>
+                        <tr>
+                            <td>Beurre</td>
+                            <td>50</td>
+                            <td>g</td>
+                        </tr>
+                        <tr>
+                            <td>Lait</td>
+                            <td>75</td>
+                            <td>cl</td>
+                        </tr>
+                        <tr>
+                            <td>Rhum</td>
+                            <td>1</td>
+                            <td>Petit verre à liqueur</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <div class="pure-u-1"></div>
             <div class="pure-u-1 show-on-little-screen">
@@ -243,9 +291,13 @@ function nextStep(i) {
 function resetRecette() {
     x = document.getElementById('etape3');
     x.style.display = 'none';
-    var x = document.getElementById('recette-crepes');
-    x.style.display = 'block';
+    var y = document.getElementById('large-recette');
+    
     var x = document.getElementById('lancer-button');
     x.style.display = 'block';
+    if(y.style.display !== 'block') {
+        var x = document.getElementById('recette-crepes');
+        x.style.display = 'block';
+    }
 }
 </script>
