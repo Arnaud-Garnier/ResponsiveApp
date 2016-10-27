@@ -90,9 +90,15 @@
                 </select><br />
                 <span id="leschamps_1"><a class="pure-button ajouter-button" href="javascript:create_champ(1)"></a></span>
                 <div class="pure-u-1"></div>
+                <div class="pure-u-1">
+                <h3>Etapes</h3>
+                <input type="text" name="init" placeholder="Texte explicatif..." /><br />
+                <span id="etapes_1"><a class="pure-button ajouter-button" href="javascript:create_champ2(1)"></a></span>
+                <div class="pure-u-1"></div>
             </div>
             <div class="pure-u-1"></div>
             <div class="pure-u-1">Photo de la recette <input type="file" name="image" id="img" /></div>
+            <div class="pure-u-1">Vidéo de la recette (optionelle) <input type="file" name="video" id="video" /></div>
         </div>
         <div class="pure-u-1"></div>
         <a href="crepe.html"><input onclick="myFunction()" id="valid-button" class="pure-button" type="submit" value="Envoyer"></a>
@@ -147,6 +153,15 @@ document.getElementById('toggle').addEventListener('click', function (e) {
 window.addEventListener(WINDOW_CHANGE_EVENT, closeMenu);
 })(this, this.document);
 
+</script>
+
+<script type="text/javascript">
+function create_champ2(i) {
+var i2 = i + 1;
+document.getElementById('etapes_'+i).innerHTML = '<input type="text" name="image['+i+']" placeholder="Texte explicatif...">';
+document.getElementById('etapes_'+i).innerHTML += (i <= 10) ? '<br /><span id="etapes_'+i2+'"><a class="pure-button ajouter-button" href="javascript:create_champ2('+i2+')"></a></span>' : '';
+
+}
 </script>
 
 <script type="text/javascript">
